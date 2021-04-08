@@ -81,8 +81,6 @@ namespace Arduino_to_Csharp_to_excel
             save_btn.Enabled = true;
             disconnect_btn.Enabled = true;
             Clear_btn.Enabled = true;
-            cb_separator.Enabled = true;
-
         }
 
         private void Excel_writing_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -217,12 +215,12 @@ namespace Arduino_to_Csharp_to_excel
                 Stop.Enabled = true;
                 Record.Enabled = false;
                 status.Text = "Status : Recording...";
-                recording_worker.RunWorkerAsync();
                 save_btn.Enabled = false;
                 Clear_btn.Enabled = false;
                 disconnect_btn.Enabled = false;
                 cb_separator.Enabled = false;
                 cb_date.Enabled = false;
+                recording_worker.RunWorkerAsync();
             }
             else
             {
@@ -309,6 +307,7 @@ namespace Arduino_to_Csharp_to_excel
             Data_watcher.Rows.Clear();
             Data_watcher.Columns.Clear();
             cb_date.Enabled = true;
+            cb_separator.Enabled = true;
             status.Text = "Status : Grid cleared";
         }
 
